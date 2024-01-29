@@ -17,7 +17,7 @@ app.post("/sendMail", async (req, res) => {
     const { email: to } = req.body;
     await sendMailService(to);
 
-    res.status(200).json("Mail sent successfully 😀. Please check spam too..");
+    res.status(200).json("Mail sent successfully 😀. Please check spam too.");
   } catch (error) {
     res.status(400).json("Failed to send mail 😥");
   }
