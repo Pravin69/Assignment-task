@@ -1,16 +1,16 @@
 import express from "express";
 import dotenv from "dotenv";
 import path from "path";
+import cors from "cors";
 import sendMailService from "./services/email.js";
 
 dotenv.config();
 const __dirname = path.resolve(path.dirname(""));
 
 const app = express();
-
 app.use(express.static(path.resolve(__dirname, "dist")));
-
 app.use(express.json());
+app.use(cors());
 
 app.post("/sendMail", async (req, res) => {
   try {
